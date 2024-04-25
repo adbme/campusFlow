@@ -1,0 +1,10 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-documents-links',
+  templateUrl: './documents-links.component.html',
+  styleUrl: './documents-links.component.css'
+})
+export class DocumentsLinksComponent {
+
+}
