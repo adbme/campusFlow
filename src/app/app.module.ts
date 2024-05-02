@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatIconModule } from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatListModule } from '@angular/material/list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +12,10 @@ import { HomeComponent } from './home/home.component';
 import { PlanningComponent } from './planning/planning.component';
 import { ReportGradesComponent } from './report-grades/report-grades.component';
 import { DocumentsLinksComponent } from './documents-links/documents-links.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
+
 
 @NgModule({
   declarations: [
@@ -17,11 +24,16 @@ import { DocumentsLinksComponent } from './documents-links/documents-links.compo
     HomeComponent,
     PlanningComponent,
     ReportGradesComponent,
-    DocumentsLinksComponent
+    DocumentsLinksComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSidenavModule,
+    MatIconModule,
+    BrowserAnimationsModule,
+    MatListModule
   ],
   providers: [
     provideAnimationsAsync()

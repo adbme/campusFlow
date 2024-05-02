@@ -1,3 +1,31 @@
-<app-documents-links></app-documents-links>
-<app-report-grades></app-report-grades>
-<app-planning></app-planning>
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>
+        <div class="logo-container">
+            <img src="/assets/images/logo.png" alt="Logo" class="logo">
+            <p class="logo-title">CAMPUS <span class="F28125">FLOW</span></p>
+        </div>
+        <mat-nav-list class="nav-links">
+            <a mat-list-item routerLink="/planning">
+                <div class="link-content">
+                    <mat-icon  routerLinkActive="active-link">event</mat-icon>
+                    <span>Planning</span>
+                </div>
+            </a>
+            <a mat-list-item routerLink="/report-grades">
+                <div class="link-content">
+                    <mat-icon  routerLinkActive="active-link">mode_edit_24px</mat-icon>
+                    <span>Bulletin</span>
+                </div>
+            </a>
+            <a mat-list-item routerLink="/documents-links" >
+                <div class="link-content">
+                    <mat-icon routerLinkActive="active-link">file_download</mat-icon>
+                    <span>Doc/liens</span>
+                </div>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
