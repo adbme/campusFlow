@@ -9,3 +9,26 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     padding: 10px 20px 10px 20px;
     border: none;
 }
+
+
+.F28125{
+    color: #F28125;
+}
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+
+.logo {
+    margin-bottom: 20px;
+    width: 70px; 
+    height: auto;
+}
+
+.logo-title{ 
+    font-weight: 700;
+    font-size: 20px
+}
