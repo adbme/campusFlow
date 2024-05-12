@@ -7,6 +7,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { AvatarModule } from 'ngx-avatars';
 import { HttpClientModule } from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -59,7 +60,8 @@ import { AuthGuard } from './auth.guard';
     MatInputModule,
     MatButtonModule,
     MatGridListModule,
-    MatCardAvatar
+    MatCardAvatar,
+    MatTableModule
   ],
   providers: [
     provideAnimationsAsync(),
