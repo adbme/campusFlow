@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'documents-links', component: DocumentsLinksComponent, canActivate: [AuthGuard] },
   { path: 'planning', component: PlanningComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '**', component: NotFoundComponent }
+  { path: '**', component: NotFoundComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

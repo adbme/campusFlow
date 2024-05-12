@@ -1,10 +1,59 @@
-mat-grid-tile {
-    background: lightblue;
-    height: 70vh;
-    width: 70vw;
+.login-container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../assets/images/login-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 60%;
+}
+
+
+.right-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  padding: 30px;
+}
+
+.login-card {
+  max-width: 700px;
+  width: 100%;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+
+@media screen and (max-width: 768px) {
+  .login-container {
+   flex-direction: column;
+   overflow: hidden;
   }
 
-  .div{
-    background-color: red;
-    width: 100%;
+  .left-section {
+    height: 30vh; 
+    width: 100%; 
+    clip-path: ellipse(50% 100% at 50% 0%);
+    transform: scale(1.7);
   }
+
+  .right-section {
+    height: 70vh;
+    width: 90%;
+  }
+  
+  
+}
+

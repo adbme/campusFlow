@@ -4,6 +4,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
+import { AvatarModule } from 'ngx-avatars';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,12 +20,15 @@ import { DocumentsLinksComponent } from './documents-links/documents-links.compo
 import { NotFoundComponent } from './not-found/not-found.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
-import { MatCardModule } from '@angular/material/card';
+import { MatCardAvatar, MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { AuthGuard } from './auth.guard';
+
+
 
 
 
@@ -41,14 +47,19 @@ import { AuthGuard } from './auth.guard';
     AppRoutingModule,
     MatSidenavModule,
     MatIconModule,
+    MatMenuModule,
+    HttpClientModule,
+    CommonModule,
     BrowserAnimationsModule,
     MatListModule,
     MatCardModule,
     FormsModule,
     MatFormFieldModule,
+    AvatarModule,
     MatInputModule,
     MatButtonModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCardAvatar
   ],
   providers: [
     provideAnimationsAsync(),

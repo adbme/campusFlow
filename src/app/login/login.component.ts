@@ -20,4 +20,5 @@ export class LoginComponent {
       alert('Identifiants incorrects!');
     }
   }
+
 }
