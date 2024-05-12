@@ -20,6 +20,7 @@
   align-items: center;
   width: 40%;
   padding: 30px;
+  flex-direction: column;
 }
 
 .login-card {
@@ -34,6 +35,32 @@ mat-form-field {
 .full-width {
   width: 100%;
 }
+
+
+
+.logo-container-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  margin-bottom: 10%;
+}
+
+
+
+.logo-flex {
+  margin-right: 20px;
+  width: 100px; 
+  height: auto;
+}
+
+
+.logo-title-flex{ 
+  font-weight: 700;
+  margin-top: 20px;
+  font-size: 40px;
+}
+
 
 
 @media screen and (max-width: 768px) {
@@ -54,6 +81,31 @@ mat-form-field {
     width: 90%;
   }
   
+  .logo-container-flex {
+    margin-bottom: 0px;
+  }
   
 }
 
+
+@media screen and (max-width: 1070px) {
+  .logo-title-flex { 
+display: flex;
+  }
+
+  .logo-container-flex {
+    transform: scale(0.9);
+  }
+  
+}
+
+@media screen and (max-width: 450px) {
+
+
+  .logo-container-flex {
+    transform: scale(0.7);
+  }
+  
+
+ 
+}

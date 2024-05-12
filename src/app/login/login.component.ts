@@ -17,7 +17,7 @@ export class LoginComponent {
     if (this.authService.login(this.username, this.password)) {
       this.router.navigate(['/planning']); 
     } else {
-      alert('Identifiants incorrects!');
+      alert('user : admin, password : admin');
     }
   }
 
