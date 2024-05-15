@@ -33,6 +33,7 @@ import { AuthGuard } from './auth.guard';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +62,8 @@ import { AuthGuard } from './auth.guard';
     MatButtonModule,
     MatGridListModule,
     MatCardAvatar,
-    MatTableModule
+    MatTableModule,
+    MatButtonModule
   ],
   providers: [
     provideAnimationsAsync(),

@@ -1,0 +1,66 @@
+/*.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card-container mat-card {
+    flex-basis: calc(33.33% - 20px);
+}*/
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.card-container mat-card {
+    margin-bottom: 20px; 
+}
+
+.Absence {
+    max-width: 300px;
+    border-radius: 10px;
+    background-color: #fef7ff; 
+    border: 1px solid lightgrey; 
+}
+
+.Absence img {
+    object-fit: cover;
+    object-position: center;
+    height: 200px; 
+    background-position: bottom;
+    margin-bottom: 10px;
+}
+
+mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+mat-card-actions button {
+    border-radius: 20px; 
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+mat-card-actions button:last-child {
+    margin-right: 0; 
+}
+
+mat-card-actions button:nth-child(1) {
+    border: 1px solid darkgrey; 
+}
+
+mat-card-actions button:nth-child(2) {
+    background-color: #6750a4; 
+    color: white; 
+}
+
+mat-card-content {
+    margin-bottom: 20px; /* Adjust this value as needed */
+}
+
+.custom-title {
+    font-size: 1.2em; /* Adjust this value to match the size of h3 */
+    font-weight: 500; /* Adjust this value to match the boldness of h2 */
+}

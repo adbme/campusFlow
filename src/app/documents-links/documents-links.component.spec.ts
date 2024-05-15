@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { DocumentsLinksComponent } from './documents-links.component';
+import {Component} from '@angular/core';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 describe('DocumentsLinksComponent', () => {
   let component: DocumentsLinksComponent;
