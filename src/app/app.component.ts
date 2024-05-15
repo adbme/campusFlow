@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 
 
@@ -10,8 +11,13 @@ import { Router } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  button1Visible: boolean = true;
+  button2Visible: boolean = false;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  isSmallScreen = false;
+
+
+  constructor(private authService: AuthService, private router: Router, private breakpointObserver: BreakpointObserver) {}
   
   title = 'campusFlow';
   navItems = [
@@ -28,6 +34,22 @@ export class AppComponent {
 
   isLoggedIn(): boolean {
     return this.authService.isLoggedIn();
+  }
+  
+   toggleButton1() {
+    this.button1Visible = !this.button1Visible;
+    this.button2Visible = !this.button1Visible;
+  }
+
+  toggleButton2() {
+    this.button2Visible = !this.button2Visible;
+    this.button1Visible = !this.button2Visible;
+  }
+ 
+  ngOnInit() {
+    this.breakpointObserver.observe([Breakpoints.Small, Breakpoints.Handset]).subscribe(result => {
+      this.isSmallScreen = result.matches;
+    });
   }
   
 }

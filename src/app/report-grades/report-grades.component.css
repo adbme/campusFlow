@@ -1,31 +1,74 @@
 .student-info {
-    margin-bottom: 20px;
-  }
+  margin-bottom: 20px;
+}
 
-  h2{
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  table {
-    width: 100%;
-  }
-  
-  .mat-cell, .mat-header-cell {
-    text-align: center;
-  }
-  
+h2 {
+  text-align: center;
+  font-weight: bold;
+}
 
-  th, td {
-    padding: 5px;
-    text-align: left;
-  }
-  .flex {
-    display: flex;
-  }
-  
-  .table-container {
-    width: 50%;
-  }
-  
+
+
+.mat-cell,
+.mat-header-cell {
+  text-align: center;
+}
+
+
+.table-div-first{
+  padding-left: 0px;
+  width: 60%;
+}
+
+.table-div-second{
+  width: 30%;
+}
+
+.table-div{
+    padding: 30px;
+
+}
+.table-div-third{
+  width: 200px;
+  padding-right: 0px;
+
+}
+
+@media screen and (max-width: 1027px) {
+  .table-div{
+    padding: 10px;
+    padding-left: 0px;
+}
+
+.flex-table-div{
+flex-direction: column;
+}
+
+
+.table-div-first{
+  width: 100%;
+}
+
+.table-div-second{
+  width: 50%;
+}
+
+.table-div-third{
+  width: 20%;
+}
+
+}
+th,
+td {
+  padding: 5px;
+  text-align: left;
+}
+
+.flex {
+  display: flex;
+}
+
+.table-container {
+  width: 50%;
+}
 
