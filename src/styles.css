@@ -1,5 +1,8 @@
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: hidden;}
 
 
 .campus-button  {
@@ -31,4 +34,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .logo-title{ 
     font-weight: 700;
     font-size: 20px
+}
+
+.flex{
+    display: flex;
 }

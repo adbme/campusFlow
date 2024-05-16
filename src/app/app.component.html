@@ -55,10 +55,12 @@
         
     </mat-sidenav>
     <mat-sidenav-content>
-        <button mat-icon-button (click)="toggleButton2();drawer.toggle()" *ngIf="button2Visible">
+       
+             <button mat-icon-button (click)="toggleButton2();drawer.toggle()" *ngIf="button2Visible">
             <mat-icon>menu</mat-icon>
         </button>
-        <router-outlet></router-outlet>
+
+         <router-outlet></router-outlet>       
     </mat-sidenav-content>
 </mat-sidenav-container>
 

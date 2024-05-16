@@ -8,7 +8,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { AvatarModule } from 'ngx-avatars';
 import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
-
+import { MatSelectModule } from '@angular/material/select';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,6 +33,10 @@ import { AuthGuard } from './auth.guard';
 
 
 
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -52,6 +56,7 @@ import { AuthGuard } from './auth.guard';
     MatIconModule,
     MatMenuModule,
     HttpClientModule,
+    MatSelectModule,
     CommonModule,
     BrowserAnimationsModule,
     MatListModule,
@@ -64,7 +69,13 @@ import { AuthGuard } from './auth.guard';
     MatGridListModule,
     MatCardAvatar,
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    NgbModalModule,
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
   ],
   providers: [
     provideAnimationsAsync(),
