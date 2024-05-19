@@ -33,9 +33,9 @@
 
 
         <div class="bottom-section">
-        
+      
                   <button class="button-avatar" mat-icon-button [matMenuTriggerFor]="userMenu" #trigger="matMenuTrigger">
-                <ngx-avatars name="Mohamed Alazaoui" size="47" [round]="true" ></ngx-avatars>
+                <ngx-avatars name="{{user.name}}" size="47" [round]="true" ></ngx-avatars>
             </button>  
             
             <mat-menu #userMenu="matMenu">

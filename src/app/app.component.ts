@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -16,8 +17,17 @@ export class AppComponent {
 
   isSmallScreen = false;
 
+  user: any = {};
+  
+    constructor(private authService: AuthService, private router: Router, private breakpointObserver: BreakpointObserver, private http: HttpClient) {
+      this.http.get<any[]>('http://localhost:3000/eleves').subscribe((data) => {
+    if (data && data.length > 0) {
+      this.user = data[0]; 
+    }
+  });
+    }
 
-  constructor(private authService: AuthService, private router: Router, private breakpointObserver: BreakpointObserver) {}
+
   
   title = 'campusFlow';
   navItems = [
