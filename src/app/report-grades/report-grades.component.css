@@ -179,7 +179,6 @@ td {
   margin-right: 20px; /* Espacement entre les notes */
 }
 
-<<<<<<< HEAD
 
       .notes-container {
         display: flex;
@@ -190,7 +189,6 @@ td {
       }
 
  
-=======
 .vertical-line {
   height: 100%;
   width: 1px;
@@ -198,4 +196,3 @@ td {
   background-color: red; /* Couleur de la ligne */
   margin: 0;
 }
->>>>>>> dbcb694ed560dba1772c6d303378d4a960701ae6
