@@ -38,5 +38,49 @@
       "range": "Aout 2023 à Juin 2024",
       "currentSemester": 1
     }
+  ],
+
+  "classes": [
+    {
+      "id": "60d0fe4f5311236168a109ca",
+      "name": "Classe 1"
+    },
+    {
+      "id": "60d0fe4f5311236168a109cb",
+      "name": "Classe 2"
+    },
+    {
+      "id": "60d0fe4f5311236168a109cc",
+      "name": "Classe 3"
+    },
+    {
+      "id": "60d0fe4f5311236168a109cd",
+      "name": "Classe 4"
+    },
+    {
+      "id": "60d0fe4f5311236168a109ce",
+      "name": "Classe 5"
+    },
+    {
+      "id": "60d0fe4f5311236168a109cf",
+      "name": "Classe 6"
+    },
+    {
+      "id": "60d0fe4f5311236168a109d0",
+      "name": "Classe 7"
+    },
+    {
+      "id": "60d0fe4f5311236168a109d1",
+      "name": "Classe 8"
+    },
+    {
+      "id": "60d0fe4f5311236168a109d2",
+      "name": "Classe 9"
+    },
+    {
+      "id": "60d0fe4f5311236168a109d3",
+      "name": "Classe 10"
+    }
   ]
 }
+

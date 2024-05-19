@@ -48,3 +48,23 @@ h3 {
     background-color: #D0BCFF;
   }
   
+
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    gap: 20px;
+    justify-items: center
+
+
+  }
+  
+  .flex{
+    display: flex;
+
+  }
+
+  .popup{
+        justify-content: space-between;
+    background-color: red;
+  }

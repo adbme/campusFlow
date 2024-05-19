@@ -159,17 +159,10 @@ box-shadow: 0px 1px 2px 0px #0000004D;
 
       .notes-container {
         display: flex;
-        align-items: center; /* Aligne verticalement les éléments */
       }
 
       .note-item {
-        margin-right: 20px; /* Espacement entre les notes */
+        margin-right: 20px;
       }
 
-      .vertical-line {
-        height: 100%;
-        width: 1px;
-        transform:rotate(90deg);
-        background-color: red; /* Couleur de la ligne */
-        margin: 0;
-      }
+ 

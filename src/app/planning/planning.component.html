@@ -1,39 +1,10 @@
 <div class="container">
     <div class="row text-center">
-        <div class="col-md-4">
-            <div class="btn-group">
-                <button class="btn btn-primary" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate"
-                    (viewDateChange)="closeOpenMonthViewDay()">
-                    Previous
-                </button>
-                <button class="btn btn-outline-secondary" mwlCalendarToday [(viewDate)]="viewDate">
-                    Today
-                </button>
-                <button class="btn btn-primary" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate"
-                    (viewDateChange)="closeOpenMonthViewDay()">
-                    Next
-                </button>
-            </div>
-        </div>
+        
         <div class="col-md-4">
             <h3 style="text-align: center;">{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
         </div>
-        <div class="col-md-4">
-            <div class="btn-group">
-                <button class="btn btn-primary" (click)="setView(CalendarView.Month)"
-                    [class.active]="view === CalendarView.Month">
-                    Month
-                </button>
-                <button class="btn btn-primary" (click)="setView(CalendarView.Week)"
-                    [class.active]="view === CalendarView.Week">
-                    Week
-                </button>
-                <button class="btn btn-primary" (click)="setView(CalendarView.Day)"
-                    [class.active]="view === CalendarView.Day">
-                    Day
-                </button>
-            </div>
-        </div>
+    
     </div>
     <br />
     <div [ngSwitch]="view">
@@ -82,54 +53,52 @@
 
 
 
-        <ng-template #dialogContentTemplate let-closeDialog="close">
-            <h2>Ajouter un événement</h2>
+            <ng-template #dialogContentTemplate let-closeDialog="close" class="flex popup">
+            <h2>Créer un événement</h2>
             <form (ngSubmit)="addNewEvent()">
-              <div>
-                <mat-form-field>
-                  <mat-label>Titre</mat-label>
-                  <input matInput type="text" id="title" name="title" [(ngModel)]="newEvent.title" required>
-                </mat-form-field>
-              </div>
-              <div>
-                <mat-form-field>
-                  <mat-label>Début</mat-label>
-                  <input matInput type="datetime-local" id="start" name="start" [(ngModel)]="newEvent.start" required>
-                </mat-form-field>
-              </div>
-              <div>
-                <mat-form-field>
-                  <mat-label>Fin</mat-label>
-                  <input matInput type="datetime-local" id="end" name="end" [(ngModel)]="newEvent.end" required>
-                </mat-form-field>
-              </div>
-              <div>
-                <mat-form-field>
-                  <mat-label>Status</mat-label>
-                  <mat-select [(ngModel)]="newEvent.status" name="status">
-                    <mat-option value="A rendre">A rendre</mat-option>
-                    <mat-option value="Validé">Validé</mat-option>
-                    <mat-option value="Absence">Absence</mat-option>
-                    <mat-option value="Evénement">Evénement</mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </div>
-              <div>
-                <mat-form-field>
-                  <mat-label>Description</mat-label>
-                  <textarea matInput rows="4" id="description" name="description" [(ngModel)]="newEvent.description"></textarea>
-                </mat-form-field>
-              </div>
-              <div>
-                <mat-form-field>
-                  <mat-label>Classe</mat-label>
-                  <mat-select [(ngModel)]="newEvent.classe" name="classe">
-                    <mat-option value="Test1">Test1</mat-option>
-                    <mat-option value="Test2">Test2</mat-option>
-                    <mat-option value="Test3">Test3</mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </div>
+                <div class="grid-container">
+                    <div>
+                      <mat-form-field>
+                        <mat-label>Titre</mat-label>
+                        <input matInput type="text" id="title" name="title" [(ngModel)]="newEvent.title" required>
+                      </mat-form-field>
+                    </div>
+                    <div>
+                      <mat-form-field>
+                        <mat-label>Début</mat-label>
+                        <input matInput type="datetime-local" id="start" name="start" [(ngModel)]="newEvent.start" required>
+                      </mat-form-field>
+                    </div>
+                    <div>
+                      <mat-form-field>
+                        <mat-label>Status</mat-label>
+                        <mat-select [(ngModel)]="newEvent.status" name="status">
+                          <mat-option value="A rendre">A rendre</mat-option>
+                          <mat-option value="Validé">Validé</mat-option>
+                          <mat-option value="Absence">Absence</mat-option>
+                          <mat-option value="Evénement">Evénement</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+
+                    
+                    <div>
+                      <mat-form-field>
+                        <mat-label>Description</mat-label>
+                        <textarea matInput rows="4" id="description" name="description" [(ngModel)]="newEvent.description"></textarea>
+                      </mat-form-field>
+                    </div>
+                    <div>
+                      <mat-form-field>
+                        <mat-label>Classe</mat-label>
+                        <mat-select [(ngModel)]="newEvent.classe" name="classe">
+                          <mat-option *ngFor="let classe of classes" [value]="classe.id">{{ classe.name }}</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  
+                  
               <button type="submit" mat-raised-button color="primary">Ajouter</button>
             </form>
           </ng-template>

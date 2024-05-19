@@ -4,6 +4,8 @@ import {
   TemplateRef,
 } from '@angular/core';
 
+import { HttpClient } from '@angular/common/http';
+
 import {
   startOfDay,
   endOfDay,
@@ -27,6 +29,10 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { MatDialog } from '@angular/material/dialog';
 import { Dialog } from '@angular/cdk/dialog';
 
+interface Classe {
+  id: string;
+  name: string;
+}
 
 const colors: Record<string, EventColor> = {
 
@@ -53,6 +59,7 @@ const colors: Record<string, EventColor> = {
 export class PlanningComponent {
 
   @ViewChild('dialogContentTemplate') dialogContentTemplate: TemplateRef<any> | undefined;
+  dialogRef: any;
 
 
   openDialog(): void {
@@ -65,6 +72,9 @@ export class PlanningComponent {
       console.error('Le template pour le dialog n\'est pas défini.');
     }
   }
+
+ 
+
 
   addNewEvent(): void {
     this.events.push(this.newEvent);
@@ -149,8 +159,14 @@ export class PlanningComponent {
 
   activeDayIsOpen: boolean = true;
 
+  classes: Classe[] = [];
 
-  constructor(private modal: NgbModal, public dialog: MatDialog) {}
+  constructor(private modal: NgbModal, public dialog: MatDialog, private http: HttpClient) {
+    this.http.get<Classe[]>('http://localhost:3000/classes').subscribe((data) => {
+      this.classes = data;
+    });
+  }
+
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
