@@ -172,11 +172,11 @@ td {
 
 .notes-container {
   display: flex;
-  align-items: center; /* Aligne verticalement les éléments */
+  align-items: center; 
 }
 
 .note-item {
-  margin-right: 20px; /* Espacement entre les notes */
+  margin-right: 20px;
 }
 
 
@@ -189,10 +189,3 @@ td {
       }
 
  
-.vertical-line {
-  height: 100%;
-  width: 1px;
-  transform: rotate(90deg);
-  background-color: red; /* Couleur de la ligne */
-  margin: 0;
-}

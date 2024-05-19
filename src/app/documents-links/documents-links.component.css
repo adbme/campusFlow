@@ -57,10 +57,10 @@ mat-card-actions button:nth-child(2) {
 }
 
 mat-card-content {
-    margin-bottom: 20px; /* Adjust this value as needed */
+    margin-bottom: 20px; 
 }
 
 .custom-title {
-    font-size: 1.2em; /* Adjust this value to match the size of h3 */
-    font-weight: 500; /* Adjust this value to match the boldness of h2 */
+    font-size: 1.2em; 
+    font-weight: 500; 
 }

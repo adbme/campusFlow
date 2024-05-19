@@ -54,7 +54,7 @@ const colors: Record<string, EventColor> = {
 @Component({
   selector: 'app-planning',
   templateUrl: './planning.component.html',
-  styleUrls: ['./planning.component.css'] // Fixed typo in styleUrls
+  styleUrls: ['./planning.component.css'] 
 })
 export class PlanningComponent {
 
@@ -83,7 +83,7 @@ export class PlanningComponent {
 
   newEvent: any = {};
 
-  @ViewChild('modalContent', { static: true }) modalContent!: TemplateRef<any>; // Added ! to indicate property initialization
+  @ViewChild('modalContent', { static: true }) modalContent!: TemplateRef<any>; 
 
   view: CalendarView = CalendarView.Month;
 
