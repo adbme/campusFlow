@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 
 interface Note {
   discipline: string;
-  coefficient: number;
-  travaux: number;
+  coefficient?: number;
+  travaux?: number[],
   moyenne: number;
 }
 
@@ -27,10 +27,20 @@ export class ReportGradesComponent {
 
   displayedColumns: string[] = ['discipline', 'coefficient', 'travaux', 'moyenne'];
   dataSource: Note[] = [
-    { discipline: 'Mathématiques', coefficient: 4, travaux: 15, moyenne: 14.5 },
-    { discipline: 'Sciences', coefficient: 3, travaux: 12, moyenne: 11.8 },
-    { discipline: 'Langues', coefficient: 2, travaux: 13, moyenne: 12.6 },
+    {discipline: 'MODULES INFORMATIQUES ICT', moyenne:5.00},
+    { discipline: '187 Mettre en service un Poste de travail ICT avec le système d exploitation', coefficient: 1, travaux:[ 5.8, 5.0], moyenne: 5.40 },
+    { discipline: '117 Mettre en place l’infrastructure informatque d’une petite entreprise', coefficient: 3, travaux:[ 5.8, 5.0], moyenne: 11.8 },
+    { discipline: '319 Concevoir et implémenter des applications', coefficient: 1, travaux:[ 5.8, 5.0], moyenne: 12.6 },
+    { discipline: '162 Analyser et modéliser des données', coefficient: 1, travaux:[ 5.8, 5.0], moyenne: 12.6 },
   ];
+
+  isEven(index: number): boolean {
+    return index % 2 === 0;
+  }
+
+  isOdd(index: number): boolean {
+    return index % 2 !== 0;
+  }
 
   displayedColumns2: string[] = ['nom', 'valeur'];
   dataSource2: Note2[] = [

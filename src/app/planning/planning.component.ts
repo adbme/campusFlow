@@ -23,7 +23,7 @@ import {
 } from 'angular-calendar';
 import { EventColor } from 'calendar-utils';
 
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap'; // Changed NgbModalModule to NgbModal
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { MatDialog } from '@angular/material/dialog';
 import { Dialog } from '@angular/cdk/dialog';
 
