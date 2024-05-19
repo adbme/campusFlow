@@ -5,28 +5,32 @@
       "name": "Mettre en service un poste de travail ICT avec le système d'exploitation Windows",
       "coef": 1,
       "nextCoef": 2,
-      "notes": [5.8, 5]
+      "notes": [5.8, 5],
+      "noteExam": 5.5
     },
     {
       "id": 117,
       "name": "Mettre en place l'infrastructure informatique d'une petite entreprise",
       "coef": 1,
       "nextCoef": 2,
-      "notes": [4.8, 4.8]
+      "notes": [4.8, 4.8],
+      "noteExam": 4.5
     },
     {
       "id": 319,
       "name": "Concevoir et implémenter des applications",
       "coef": 1,
       "nextCoef": 2,
-      "notes": [5]
+      "notes": [5],
+      "noteExam": 2.5
     },
     {
       "id": 162,
       "name": "Analyser et modéliser des données",
       "coef": 1,
       "nextCoef": 2,
-      "notes": [5.6, 5.6]
+      "notes": [5.6, 5.6],
+      "noteExam": 3.5
     }
   ],
   "eleves": [
