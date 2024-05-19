@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 interface Note {
   // discipline: string;
@@ -32,6 +33,8 @@ export class ReportGradesComponent {
   ];
   dataSource: Note[] = [];
 
+  constructor(private authService: AuthService) {}
+
   eleve$: Promise<any> | undefined;
 
   // On init, fetch notes
@@ -43,7 +46,7 @@ export class ReportGradesComponent {
       })
     });
 
-    this.eleve$ = this.getEleve(1);
+    this.eleve$ = this.getEleve(this.authService.user.id);
   }
 
   async getAllNotes(): Promise<Note[]> {

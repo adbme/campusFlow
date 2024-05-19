@@ -13,9 +13,9 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  login(): void {
-    if (this.authService.login(this.username, this.password)) {
-      this.router.navigate(['/planning']); 
+  async login(): Promise<void> {
+    if (await this.authService.login(this.username, this.password)) {
+      this.router.navigate(['/planning']);
     } else {
       alert('user : admin, password : admin');
     }

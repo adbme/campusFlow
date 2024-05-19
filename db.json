@@ -40,7 +40,9 @@
       "class": "DEVA2A",
       "orientation": "Exploitation et infrastructure",
       "range": "Aout 2023 à Juin 2024",
-      "currentSemester": 1
+      "currentSemester": 1,
+      "username": "mohamed.alazaoui",
+      "password": "1234"
     }
   ]
 }
