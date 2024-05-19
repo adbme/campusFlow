@@ -68,11 +68,6 @@ export class ReportGradesComponent {
     return moyennes.reduce((acc, curr) => acc + curr, 0) / moyennes.length;
   }
 
-  calulateMoyenneOfModule(notes: number[], coef: number): number {
-    const moyenne = this.calculateAverage(notes);
-    return moyenne * coef;
-  }
-
   calculateAverageWithExam(element: any): number {
     const notesWithExam = [...element.notes, ...new Array(element.nextCoef).fill(element.noteExam)];
     return this.calculateAverage(notesWithExam);
