@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 interface Note {
   // discipline: string;
@@ -32,6 +33,8 @@ export class ReportGradesComponent {
   ];
   dataSource: Note[] = [];
 
+  constructor(private authService: AuthService) {}
+
   eleve$: Promise<any> | undefined;
 
   // On init, fetch notes
@@ -43,7 +46,7 @@ export class ReportGradesComponent {
       })
     });
 
-    this.eleve$ = this.getEleve(1);
+    this.eleve$ = this.getEleve(this.authService.user.id);
   }
 
   async getAllNotes(): Promise<Note[]> {
@@ -67,7 +70,6 @@ export class ReportGradesComponent {
   }
 
   calculateAverage(travaux: number[]): number {
-    // Add moyenne property to note
     return travaux.reduce((acc, curr) => acc + curr, 0) / travaux.length;
   }
 
@@ -76,12 +78,22 @@ export class ReportGradesComponent {
     return moyennes.reduce((acc, curr) => acc + curr, 0) / moyennes.length;
   }
 
-  displayedColumns2: string[] = ['nom', 'valeur'];
+  calulateMoyenneOfModule(notes: number[], coef: number): number {
+    const moyenne = this.calculateAverage(notes);
+    return moyenne * coef;
+  }
+
+  calculateAverageWithExam(element: any): number {
+    const notesWithExam = [...element.notes, ...new Array(element.nextCoef).fill(element.noteExam)];
+    return this.calculateAverage(notesWithExam);
+  }
+
+  displayedColumns2: string[] = ['coefficient', 'examen-semestriel'];
   dataSource2: Note2[] = [
     { nom: 'Mathématiques', valeur: 4 },
     { nom: 'Sciences', valeur: 3 },
   ];
 
-  displayedColumns3: string[] = ['nom'];
+  displayedColumns3: string[] = ['moyenne'];
   dataSource3: Note3[] = [{ nom: 'Mathématiques' }, { nom: 'Sciences' }];
 }

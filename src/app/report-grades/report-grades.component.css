@@ -7,57 +7,50 @@
   font-weight: bold;
 }
 
-
-
 .mat-cell,
 .mat-header-cell {
   text-align: center;
 }
 
-
-.table-div{
+.table-div {
   padding: 30px;
-
 }
 
-.table-div-first{
+.table-div-first {
   padding-left: 0px;
   width: 60%;
 }
 
-.table-div-second{
+.table-div-second {
   width: 30%;
 }
 
-.table-div-third{
+.table-div-third {
   width: 200px;
   padding-right: 0px;
-
 }
 
 @media screen and (max-width: 1027px) {
-  .table-div{
+  .table-div {
     padding: 10px;
     padding-left: 0px;
-}
+  }
 
-.flex-table-div{
-flex-direction: column;
-}
+  .flex-table-div {
+    flex-direction: column;
+  }
 
+  .table-div-first {
+    width: 100%;
+  }
 
-.table-div-first{
-  width: 100%;
-}
+  .table-div-second {
+    width: 50%;
+  }
 
-.table-div-second{
-  width: 50%;
-}
-
-.table-div-third{
-  width: 20%;
-}
-
+  .table-div-third {
+    width: 20%;
+  }
 }
 th,
 td {
@@ -74,7 +67,7 @@ td {
 }
 
 .moyenne-semestrielle-div {
-  background-color: #E6E0E9;
+  background-color: #e6e0e9;
   width: 40%;
   padding: 10px;
   display: flex;
@@ -92,19 +85,34 @@ td {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #66FD3236;
-  border: 1px solid #CAC4D0;
+  border: 1px solid #cac4d0;
 }
-.moyenne-note-div h3{
+.moyenne-note-div h3 {
   margin: 0;
   font-weight: 500;
 }
 
-.align-center{
+.moyenne-note-div-success {
+  background-color: #66fd3236;
+}
+
+.moyenne-note-div-fail {
+  background-color: #ff000036;
+}
+
+.failure {
+  background-color: #ff000036;
+}
+
+.success {
+  background-color: #66fd3236;
+}
+
+.align-center {
   align-items: center;
 }
 
-.status-réussite{
+.status-réussite {
   margin: 0;
   margin-left: 20px;
   color: #659754;
@@ -114,48 +122,64 @@ td {
 .status-échec {
   margin: 0;
   margin-left: 20px;
-  color: #FF0000;
+  color: #ff0000;
   font-weight: 700;
 }
 
-.header-table{
+.header-table {
   box-shadow: 0px 1px 3px 1px #00000026;
-  background: #F7F2FA!important;
-  box-shadow: 0px 1px 2px 0px #0000004D;
-  }
+  background: #f7f2fa !important;
+  box-shadow: 0px 1px 2px 0px #0000004d;
+}
 
-  .custom-row:nth-child(even) {
-    border: 1px solid #CAC4D0;
-    box-shadow: 0px 1px 3px 1px #00000026;
-box-shadow: 0px 1px 2px 0px #0000004D;
+.custom-row:nth-child(even) {
+  border: 1px solid #cac4d0;
+  box-shadow: 0px 1px 3px 1px #00000026;
+  box-shadow: 0px 1px 2px 0px #0000004d;
+}
 
-    }
+.custom-row:nth-child(odd) {
+  border: 1px solid #cac4d0;
 
-  .custom-row:nth-child(odd) {
+  background: #fef7ff;
+}
 
-    border: 1px solid #CAC4D0;
+.custom-row:nth-child(even):hover {
+  background-color: #ece5ed6a;
+  cursor: pointer;
+}
 
-    background: #FEF7FF;
+.custom-row:nth-child(odd):hover {
+  background-color: #e2dde4bf;
+  cursor: pointer;
+}
 
-  }
+.red-text {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+  color: red;
+}
 
-  .custom-row:nth-child(even):hover {
-    background-color: #ece5ed6a;
-    cursor: pointer;
-  }
+.green-text {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+  color: green;
+}
 
-  .custom-row:nth-child(odd):hover {
-    background-color: #e2dde4bf;
-    cursor: pointer;
-  }
+.notes-container {
+  display: flex;
+  align-items: center; /* Aligne verticalement les éléments */
+}
 
-  .red-text {
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 28px;
-    text-align: center;
-      }
+.note-item {
+  margin-right: 20px; /* Espacement entre les notes */
+}
 
+<<<<<<< HEAD
 
       .notes-container {
         display: flex;
@@ -166,3 +190,12 @@ box-shadow: 0px 1px 2px 0px #0000004D;
       }
 
  
+=======
+.vertical-line {
+  height: 100%;
+  width: 1px;
+  transform: rotate(90deg);
+  background-color: red; /* Couleur de la ligne */
+  margin: 0;
+}
+>>>>>>> dbcb694ed560dba1772c6d303378d4a960701ae6
