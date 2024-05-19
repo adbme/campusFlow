@@ -2,21 +2,11 @@ import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 
 interface Note {
-  // discipline: string;
   id: number;
   name: string;
   coef?: number;
   notes: number[];
   moyenne: number;
-}
-
-interface Note2 {
-  nom: string;
-  valeur: number;
-}
-
-interface Note3 {
-  nom: string;
 }
 
 @Component({
@@ -89,11 +79,6 @@ export class ReportGradesComponent {
   }
 
   displayedColumns2: string[] = ['coefficient', 'examen-semestriel'];
-  dataSource2: Note2[] = [
-    { nom: 'Mathématiques', valeur: 4 },
-    { nom: 'Sciences', valeur: 3 },
-  ];
 
   displayedColumns3: string[] = ['moyenne'];
-  dataSource3: Note3[] = [{ nom: 'Mathématiques' }, { nom: 'Sciences' }];
 }
