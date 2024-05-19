@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
-
 interface Note {
-  discipline: string;
-  coefficient?: number;
-  travaux?: number[],
+  // discipline: string;
+  id: number;
+  name: string;
+  coef?: number;
+  notes: number[];
   moyenne: number;
 }
 
@@ -17,22 +18,45 @@ interface Note3 {
   nom: string;
 }
 
-
 @Component({
   selector: 'app-report-grades',
   templateUrl: './report-grades.component.html',
-  styleUrl: './report-grades.component.css'
+  styleUrl: './report-grades.component.css',
 })
 export class ReportGradesComponent {
-
-  displayedColumns: string[] = ['discipline', 'coefficient', 'travaux', 'moyenne'];
-  dataSource: Note[] = [
-    {discipline: 'MODULES INFORMATIQUES ICT', moyenne:5.00},
-    { discipline: '187 Mettre en service un Poste de travail ICT avec le système d exploitation', coefficient: 1, travaux:[ 5.8, 5.0], moyenne: 5.40 },
-    { discipline: '117 Mettre en place l’infrastructure informatque d’une petite entreprise', coefficient: 3, travaux:[ 5.8, 5.0], moyenne: 11.8 },
-    { discipline: '319 Concevoir et implémenter des applications', coefficient: 1, travaux:[ 5.8, 5.0], moyenne: 12.6 },
-    { discipline: '162 Analyser et modéliser des données', coefficient: 1, travaux:[ 5.8, 5.0], moyenne: 12.6 },
+  displayedColumns: string[] = [
+    'discipline',
+    'coefficient',
+    'travaux',
+    'moyenne',
   ];
+  dataSource: Note[] = [];
+
+  eleve$: Promise<any> | undefined;
+
+  // On init, fetch notes
+  ngOnInit(): void {
+    this.getAllNotes().then((notes) => {
+      this.dataSource = notes.map((note) => {
+        note.moyenne = this.calculateAverage(note.notes);
+        return note;
+      })
+    });
+
+    this.eleve$ = this.getEleve(1);
+  }
+
+  async getAllNotes(): Promise<Note[]> {
+    return fetch('http://localhost:3000/cours').then((r) =>
+      r.json()
+    ) as Promise<Note[]>;
+  }
+
+  async getEleve(id: number): Promise<any> {
+    return fetch(`http://localhost:3000/eleves/${id}`).then((r) =>
+      r.json()
+    );
+  }
 
   isEven(index: number): boolean {
     return index % 2 === 0;
@@ -42,18 +66,22 @@ export class ReportGradesComponent {
     return index % 2 !== 0;
   }
 
+  calculateAverage(travaux: number[]): number {
+    // Add moyenne property to note
+    return travaux.reduce((acc, curr) => acc + curr, 0) / travaux.length;
+  }
+
+  calulateMoyenneSemestre(notes: Note[]): number {
+    const moyennes = notes.map((note) => note.moyenne);
+    return moyennes.reduce((acc, curr) => acc + curr, 0) / moyennes.length;
+  }
+
   displayedColumns2: string[] = ['nom', 'valeur'];
   dataSource2: Note2[] = [
     { nom: 'Mathématiques', valeur: 4 },
-    { nom: 'Sciences', valeur: 3},
+    { nom: 'Sciences', valeur: 3 },
   ];
 
   displayedColumns3: string[] = ['nom'];
-  dataSource3: Note3[] = [
-    { nom: 'Mathématiques' },
-    { nom: 'Sciences'
-
-    },
-  ];
-  
+  dataSource3: Note3[] = [{ nom: 'Mathématiques' }, { nom: 'Sciences' }];
 }

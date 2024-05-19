@@ -79,11 +79,11 @@ td {
   padding: 10px;
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
 }
 
 .moyenne-semestrielle-div h2 {
-  margin: 0; 
+  margin: 0;
   font-weight: 700;
 }
 
@@ -111,6 +111,13 @@ td {
   font-weight: 700;
 }
 
+.status-échec {
+  margin: 0;
+  margin-left: 20px;
+  color: #FF0000;
+  font-weight: 700;
+}
+
 .header-table{
   box-shadow: 0px 1px 3px 1px #00000026;
   background: #F7F2FA!important;
@@ -123,7 +130,7 @@ td {
 box-shadow: 0px 1px 2px 0px #0000004D;
 
     }
-  
+
   .custom-row:nth-child(odd) {
 
     border: 1px solid #CAC4D0;
@@ -133,32 +140,32 @@ box-shadow: 0px 1px 2px 0px #0000004D;
   }
 
   .custom-row:nth-child(even):hover {
-    background-color: #ece5ed6a; 
+    background-color: #ece5ed6a;
     cursor: pointer;
   }
-  
+
   .custom-row:nth-child(odd):hover {
-    background-color: #e2dde4bf; 
+    background-color: #e2dde4bf;
     cursor: pointer;
   }
-  
+
   .red-text {
     font-size: 17px;
     font-weight: 700;
     line-height: 28px;
     text-align: center;
       }
-  
+
 
       .notes-container {
         display: flex;
         align-items: center; /* Aligne verticalement les éléments */
       }
-      
+
       .note-item {
         margin-right: 20px; /* Espacement entre les notes */
       }
-      
+
       .vertical-line {
         height: 100%;
         width: 1px;
@@ -166,4 +173,3 @@ box-shadow: 0px 1px 2px 0px #0000004D;
         background-color: red; /* Couleur de la ligne */
         margin: 0;
       }
-      
